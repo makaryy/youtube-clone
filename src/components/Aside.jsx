@@ -110,8 +110,8 @@ const Aside = () => {
         },
     ];
     return open ? (
-        <aside className=" bg-menu w-60 h-screen top-0 absolute flex flex-col py-2">
-            <div className="p-4 bg-menu w-60 flex">
+        <aside className=" bg-menu w-60 h-screen flex flex-col py-2">
+            <div className="bg-menu w-60 flex px-4 py-2 max-h-11">
                 <button className="mx-2 m-1 h-5 w-5">
                     <img src="/icons/menu.svg" className="w-5 h-5" alt="" />
                 </button>
@@ -125,7 +125,7 @@ const Aside = () => {
                     <div className=" bg-neutral-400 rounded-full opacity-0 group-hover:opacity-100"></div>
                 )}
             >
-                <div className="py-2 flex flex-col">
+                <div className="py-2 flex flex-col pr-3">
                     <AsideButton src="/icons/home.svg" label="Home" />
                     <AsideButton src="/icons/compass.svg" label="Explore" />
                     <AsideButton src="/icons/shorts.svg" label="Shorts" />

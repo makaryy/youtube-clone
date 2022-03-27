@@ -1,10 +1,21 @@
-import React from "react";
+import { useState } from "react";
 
 const AsideButton = ({ src, label, avatar, onClick }) => {
+    const [animate, setAnimate] = useState(false);
     return (
         <button
-            className="flex flex-row items-center active:animate-button-click w-full px-4 py-2 hover:bg-menu-active"
-            onClick={() => onClick()}
+            className={
+                animate
+                    ? "flex flex-row items-center animate-button-click w-full px-4 py-2 hover:bg-menu-active"
+                    : "flex flex-row items-center w-full px-4 py-2 hover:bg-menu-active"
+            }
+            onClick={() => {
+                setAnimate(true);
+                setTimeout(() => {
+                    setAnimate(false);
+                }, 300);
+                onClick && onClick();
+            }}
         >
             <img
                 src={src}
