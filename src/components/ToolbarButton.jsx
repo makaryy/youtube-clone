@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ToolbarButton = ({ src }) => {
+const ToolbarButton = ({ src, style }) => {
     const [animate, setAnimate] = useState(false);
     return (
         <button
@@ -11,10 +11,9 @@ const ToolbarButton = ({ src }) => {
             }
             onClick={() => {
                 setAnimate(true);
-                setTimeout(() => {
-                    setAnimate(false);
-                }, 300);
             }}
+            onAnimationEnd={() => setAnimate(false)}
+            style={style}
         >
             <img src={src} alt="" className="w-6 h-6" />
         </button>

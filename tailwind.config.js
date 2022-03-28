@@ -6,6 +6,13 @@ module.exports = {
         fontFamily: {
             yt: ["Roboto", "Arial", "sans-serif"],
         },
+        screens: {
+            sm: "512px",
+            md: "892px",
+            lg: "1144px",
+            xl: "1966px",
+            "2xl": "2304px",
+        },
         extend: {
             animation: {
                 "button-click": "button-click ease-out 300ms",

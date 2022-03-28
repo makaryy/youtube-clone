@@ -130,14 +130,14 @@ const Aside = () => {
                     <AsideButton src="/icons/compass.svg" label="Explore" />
                     <AsideButton src="/icons/shorts.svg" label="Shorts" />
                     <AsideButton src="/icons/subscriptions.svg" label="Subscriptions" />
-                    <hr className="border-neutral-700 my-3 mr-3" />
+                    <hr className="border-neutral-700 my-3" />
                     <AsideButton src="/icons/library.svg" label="Library" />
                     <AsideButton src="/icons/history.svg" label="History" />
                     <AsideButton src="/icons/your-videos.svg" label="Your Videos" />
                     <AsideButton src="/icons/watch-later.svg" label="Watch Later" />
                     <AsideButton src="/icons/like.svg" label="Liked Videos" />
                     <AsideButton src="/icons/favorites.svg" label="Favorites" />
-                    <hr className="border-neutral-700 my-3 mr-3" />
+                    <hr className="border-neutral-700 my-3" />
                     <p className="w-full px-4 pt-1 pb-2 text-neutral-400">SUBSCRIPTIONS</p>
                     {subscriptions.map((sub, index) => {
                         return openSubscriptions ? (
@@ -149,7 +149,12 @@ const Aside = () => {
                             />
                         ) : (
                             index < 8 && (
-                                <AsideButton src={sub.avatar} label={sub.name} avatar={true} />
+                                <AsideButton
+                                    key={index}
+                                    src={sub.avatar}
+                                    label={sub.name}
+                                    avatar={true}
+                                />
                             )
                         );
                     })}
@@ -166,19 +171,19 @@ const Aside = () => {
                             onClick={() => setOpenSubscriptions(true)}
                         />
                     )}
-                    <hr className="border-neutral-700 my-3 mr-3" />
+                    <hr className="border-neutral-700 my-3" />
                     <p className="w-full px-4 pt-1 pb-2 text-neutral-400">MORE FROM YOUTUBE</p>
                     <AsideButton src="/icons/youtube.svg" label="YouTube Premium" />
                     <AsideButton src="/icons/movies.svg" label="Movies" />
                     <AsideButton src="/icons/gaming.svg" label="Gaming" />
                     <AsideButton src="/icons/live.svg" label="Live" />
                     <AsideButton src="/icons/sports.svg" label="Sports" />
-                    <hr className="border-neutral-700 my-3 mr-3" />
+                    <hr className="border-neutral-700 my-3" />
                     <AsideButton src="/icons/settings.svg" label="Settings" />
                     <AsideButton src="/icons/report-history.svg" label="Report history" />
                     <AsideButton src="/icons/help.svg" label="Help" />
                     <AsideButton src="/icons/feedback.svg" label="Send Feedback" />
-                    <hr className="border-neutral-700 my-3 mr-3" />
+                    <hr className="border-neutral-700 my-3" />
                     <div className="px-5 text-neutral-400 text-xs font-semibold ml-1">
                         <div className="flex flex-wrap justify-left gap-x-3 py-2 mr-5">
                             <a href="">About</a>
@@ -189,7 +194,7 @@ const Aside = () => {
                             <a href="">Advertise</a>
                             <a href="">Developers</a>
                         </div>
-                        <div className="flex flex-wrap justify-left gap-x-3 py-2 mr-5">
+                        <div className="flex flex-wrap justify-left gap-x-3 py-2 mr-2">
                             <a href="">Terms</a>
                             <a href="">Privacy</a>
                             <a href="">Policy &amp; Safety</a>

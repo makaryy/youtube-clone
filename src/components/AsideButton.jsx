@@ -11,11 +11,9 @@ const AsideButton = ({ src, label, avatar, onClick }) => {
             }
             onClick={() => {
                 setAnimate(true);
-                setTimeout(() => {
-                    setAnimate(false);
-                }, 300);
                 onClick && onClick();
             }}
+            onAnimationEnd={() => setAnimate(false)}
         >
             <img
                 src={src}

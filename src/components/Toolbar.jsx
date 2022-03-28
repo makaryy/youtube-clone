@@ -1,6 +1,5 @@
 import { useState } from "react";
 import ToolbarButton from "./ToolbarButton";
-// import searchIcon from "../../public/icons/search.svg";
 
 const Toolbar = () => {
     const [search, setSearch] = useState("");
@@ -22,8 +21,8 @@ const Toolbar = () => {
 
             <div className="flex flex-row h-10 min-w-min max-w-2xl grow">
                 <form onSubmit={(e) => handleSubmit(e)} className="grow flex flex-row">
-                    {!showIcon && <div className="w-6 h-6 ms-2"></div>}
-                    <div className="grow bg-search-bar border-search-button border rounded-l-sm focus:outline focus:outline-1 text-white flex flex-row items-center">
+                    {!showIcon && <div className="w-6 h-6 mx-2"></div>}
+                    <div className="grow bg-search-bar border-search-button border rounded-l-sm text-white flex flex-row items-center">
                         {showIcon && (
                             <img src="/icons/search.svg" alt="" className="w-5 h-5 mx-2" />
                         )}
@@ -35,8 +34,8 @@ const Toolbar = () => {
                             placeholder="Search"
                             className={
                                 showIcon
-                                    ? "bg-search-bar grow p-2 pl-0 outline-none"
-                                    : "bg-search-bar grow p-2 outline-none"
+                                    ? "bg-search-bar grow px-2 outline-none"
+                                    : "bg-search-bar grow px-2 outline-none"
                             }
                             onFocus={() => setShowIcon(true)}
                             onBlur={() => setShowIcon(false)}
@@ -49,7 +48,10 @@ const Toolbar = () => {
                     >
                         <img src="/icons/search.svg" alt="" />
                     </button>
-                    <ToolbarButton src="/icons/microphone.svg" />
+                    <ToolbarButton
+                        src="/icons/microphone.svg"
+                        style={{ backgroundColor: "rgb(18,18,18)" }}
+                    />
                 </form>
             </div>
             <div className="flex justify-center items-center">
