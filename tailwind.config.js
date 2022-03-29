@@ -15,7 +15,7 @@ module.exports = {
         },
         extend: {
             animation: {
-                "button-click": "button-click ease-out 300ms",
+                "button-click": "button-click ease-in-out 300ms",
             },
             keyframes: {
                 "button-click": {
@@ -31,11 +31,13 @@ module.exports = {
                 "search-bar": "#121212",
                 bg: "#181818",
                 active: "#565656",
-                "category-bar": "linear-gradient(to right, #fff, #fff)",
             },
             boxShadow: {
                 right: "15px 0px 10px 5px #212121",
                 left: "-15px 0px 10px 5px #212121",
+            },
+            fontSize: {
+                "2xs": "0.625rem",
             },
         },
     },

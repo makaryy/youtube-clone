@@ -1,159 +1,98 @@
 import { useState, useEffect } from "react";
 import Scrollbars from "react-custom-scrollbars-2";
 import AsideButton from "./AsideButton";
+import Logo from "./Logo";
 
-const Aside = () => {
-    const [open, setOpen] = useState(true);
-
+const Aside = ({ asideOpen, setAsideOpen }) => {
     const [openSubscriptions, setOpenSubscriptions] = useState(false);
 
     const subscriptions = [
-        {
-            name: "Judith Ross",
-            avatar: `https://picsum.photos/48?random=${Math.floor(Math.random() * 1000)}`,
-        },
-        {
-            name: "Richard Ward",
-            avatar: `https://picsum.photos/48?random=${Math.floor(Math.random() * 1000)}`,
-        },
-        {
-            name: "Nicholas Parker",
-            avatar: `https://picsum.photos/48?random=${Math.floor(Math.random() * 1000)}`,
-        },
-        {
-            name: "Martha Rivera",
-            avatar: `https://picsum.photos/48?random=${Math.floor(Math.random() * 1000)}`,
-        },
-        {
-            name: "Christina Gray",
-            avatar: `https://picsum.photos/48?random=${Math.floor(Math.random() * 1000)}`,
-        },
-        {
-            name: "Jean Lewis",
-            avatar: `https://picsum.photos/48?random=${Math.floor(Math.random() * 1000)}`,
-        },
-        {
-            name: "Kevin Wilson",
-            avatar: `https://picsum.photos/48?random=${Math.floor(Math.random() * 1000)}`,
-        },
-        {
-            name: "Helen Clark",
-            avatar: `https://picsum.photos/48?random=${Math.floor(Math.random() * 1000)}`,
-        },
-        {
-            name: "Donna Hernandez",
-            avatar: `https://picsum.photos/48?random=${Math.floor(Math.random() * 1000)}`,
-        },
-        {
-            name: "Wanda Watson",
-            avatar: `https://picsum.photos/48?random=${Math.floor(Math.random() * 1000)}`,
-        },
-        {
-            name: "Bruce Evans",
-            avatar: `https://picsum.photos/48?random=${Math.floor(Math.random() * 1000)}`,
-        },
-        {
-            name: "Patrick Torres",
-            avatar: `https://picsum.photos/48?random=${Math.floor(Math.random() * 1000)}`,
-        },
-        {
-            name: "Albert Reed",
-            avatar: `https://picsum.photos/48?random=${Math.floor(Math.random() * 1000)}`,
-        },
-        {
-            name: "Thomas Morgan",
-            avatar: `https://picsum.photos/48?random=${Math.floor(Math.random() * 1000)}`,
-        },
-        {
-            name: "Emily Lopez",
-            avatar: `https://picsum.photos/48?random=${Math.floor(Math.random() * 1000)}`,
-        },
-        {
-            name: "Justin Henderson",
-            avatar: `https://picsum.photos/48?random=${Math.floor(Math.random() * 1000)}`,
-        },
-        {
-            name: "Steve Adams",
-            avatar: `https://picsum.photos/48?random=${Math.floor(Math.random() * 1000)}`,
-        },
-        {
-            name: "Frank Simmons",
-            avatar: `https://picsum.photos/48?random=${Math.floor(Math.random() * 1000)}`,
-        },
-        {
-            name: "David Brown",
-            avatar: `https://picsum.photos/48?random=${Math.floor(Math.random() * 1000)}`,
-        },
-        {
-            name: "Bobby Mitchell",
-            avatar: `https://picsum.photos/48?random=${Math.floor(Math.random() * 1000)}`,
-        },
-        {
-            name: "Todd Perez",
-            avatar: `https://picsum.photos/48?random=${Math.floor(Math.random() * 1000)}`,
-        },
-        {
-            name: "Carl King",
-            avatar: `https://picsum.photos/48?random=${Math.floor(Math.random() * 1000)}`,
-        },
-        {
-            name: "Tina Robinson",
-            avatar: `https://picsum.photos/48?random=${Math.floor(Math.random() * 1000)}`,
-        },
-        {
-            name: "Fred Baker",
-            avatar: `https://picsum.photos/48?random=${Math.floor(Math.random() * 1000)}`,
-        },
-        {
-            name: "Joseph Griffin",
-            avatar: `https://picsum.photos/48?random=${Math.floor(Math.random() * 1000)}`,
-        },
+        "Judith Ross",
+        "Richard Ward",
+        "Nicholas Parker",
+        "Martha Rivera",
+        "Christina Gray",
+        "Jean Lewis",
+        "Kevin Wilson",
+        "Helen Clark",
+        "Donna Hernandez",
+        "Wanda Watson",
+        "Bruce Evans",
+        "Patrick Torres",
+        "Albert Reed",
+        "Thomas Morgan",
+        "Emily Lopez",
+        "Justin Henderson",
+        "Steve Adams",
+        "Frank Simmons",
+        "David Brown",
+        "Bobby Mitchell",
+        "Todd Perez",
+        "Carl King",
+        "Tina Robinson",
+        "Fred Baker",
+        "Joseph Griffin",
     ];
-    return open ? (
+    return asideOpen ? (
         <aside className=" bg-menu w-60 h-screen flex flex-col py-2">
-            <div className="bg-menu w-60 flex px-4 py-2 max-h-11">
-                <button className="mx-2 m-1 h-5 w-5">
-                    <img src="/icons/menu.svg" className="w-5 h-5" alt="" />
-                </button>
-                <button className=" mx-3">
-                    <img src="/icons/youtube-logo.svg" alt="" className="w-24 h-5" />
-                </button>
-            </div>
+            <Logo asideOpen={asideOpen} setAsideOpen={setAsideOpen} />
             <Scrollbars
                 className="group"
                 renderThumbVertical={() => (
                     <div className=" bg-neutral-400 rounded-full opacity-0 group-hover:opacity-100"></div>
                 )}
             >
-                <div className="py-2 flex flex-col pr-3">
-                    <AsideButton src="/icons/home.svg" label="Home" />
-                    <AsideButton src="/icons/compass.svg" label="Explore" />
-                    <AsideButton src="/icons/shorts.svg" label="Shorts" />
-                    <AsideButton src="/icons/subscriptions.svg" label="Subscriptions" />
-                    <hr className="border-neutral-700 my-3" />
-                    <AsideButton src="/icons/library.svg" label="Library" />
-                    <AsideButton src="/icons/history.svg" label="History" />
-                    <AsideButton src="/icons/your-videos.svg" label="Your Videos" />
-                    <AsideButton src="/icons/watch-later.svg" label="Watch Later" />
-                    <AsideButton src="/icons/like.svg" label="Liked Videos" />
-                    <AsideButton src="/icons/favorites.svg" label="Favorites" />
+                <div className="py-2 flex flex-col pr-3 my-1">
+                    <AsideButton src="/icons/home.svg" label="Home" asideOpen={asideOpen} />
+                    <AsideButton src="/icons/compass.svg" label="Explore" asideOpen={asideOpen} />
+                    <AsideButton src="/icons/shorts.svg" label="Shorts" asideOpen={asideOpen} />
+                    <AsideButton
+                        src="/icons/subscriptions.svg"
+                        label="Subscriptions"
+                        asideOpen={asideOpen}
+                    />
+                    <hr className="border-neutral-700 my-3" asideOpen={asideOpen} />
+                    <AsideButton src="/icons/library.svg" label="Library" asideOpen={asideOpen} />
+                    <AsideButton src="/icons/history.svg" label="History" asideOpen={asideOpen} />
+                    <AsideButton
+                        src="/icons/your-videos.svg"
+                        label="Your Videos"
+                        asideOpen={asideOpen}
+                    />
+                    <AsideButton
+                        src="/icons/watch-later.svg"
+                        label="Watch Later"
+                        asideOpen={asideOpen}
+                    />
+                    <AsideButton src="/icons/like.svg" label="Liked Videos" asideOpen={asideOpen} />
+                    <AsideButton
+                        src="/icons/favorites.svg"
+                        label="Favorites"
+                        asideOpen={asideOpen}
+                    />
                     <hr className="border-neutral-700 my-3" />
                     <p className="w-full px-4 pt-1 pb-2 text-neutral-400">SUBSCRIPTIONS</p>
                     {subscriptions.map((sub, index) => {
                         return openSubscriptions ? (
                             <AsideButton
                                 key={index}
-                                src={sub.avatar}
+                                src={`https://picsum.photos/48?random=${Math.floor(
+                                    Math.random() * 1000
+                                )}`}
                                 label={sub.name}
                                 avatar={true}
+                                asideOpen={asideOpen}
                             />
                         ) : (
                             index < 8 && (
                                 <AsideButton
                                     key={index}
-                                    src={sub.avatar}
-                                    label={sub.name}
+                                    src={`https://picsum.photos/48?random=${Math.floor(
+                                        Math.random() * 1000
+                                    )}`}
+                                    label={sub}
                                     avatar={true}
+                                    asideOpen={asideOpen}
                                 />
                             )
                         );
@@ -163,26 +102,40 @@ const Aside = () => {
                             src="/icons/up.svg"
                             label="Show less"
                             onClick={() => setOpenSubscriptions(false)}
+                            asideOpen={asideOpen}
                         />
                     ) : (
                         <AsideButton
                             src="/icons/down.svg"
                             label={`Show ${subscriptions.length - 8} more`}
                             onClick={() => setOpenSubscriptions(true)}
+                            asideOpen={asideOpen}
                         />
                     )}
                     <hr className="border-neutral-700 my-3" />
                     <p className="w-full px-4 pt-1 pb-2 text-neutral-400">MORE FROM YOUTUBE</p>
-                    <AsideButton src="/icons/youtube.svg" label="YouTube Premium" />
-                    <AsideButton src="/icons/movies.svg" label="Movies" />
-                    <AsideButton src="/icons/gaming.svg" label="Gaming" />
-                    <AsideButton src="/icons/live.svg" label="Live" />
-                    <AsideButton src="/icons/sports.svg" label="Sports" />
-                    <hr className="border-neutral-700 my-3" />
-                    <AsideButton src="/icons/settings.svg" label="Settings" />
-                    <AsideButton src="/icons/report-history.svg" label="Report history" />
-                    <AsideButton src="/icons/help.svg" label="Help" />
-                    <AsideButton src="/icons/feedback.svg" label="Send Feedback" />
+                    <AsideButton
+                        src="/icons/youtube.svg"
+                        label="YouTube Premium"
+                        asideOpen={asideOpen}
+                    />
+                    <AsideButton src="/icons/movies.svg" label="Movies" asideOpen={asideOpen} />
+                    <AsideButton src="/icons/gaming.svg" label="Gaming" asideOpen={asideOpen} />
+                    <AsideButton src="/icons/live.svg" label="Live" asideOpen={asideOpen} />
+                    <AsideButton src="/icons/sports.svg" label="Sports" asideOpen={asideOpen} />
+                    <hr className="border-neutral-700 my-3" asideOpen={asideOpen} />
+                    <AsideButton src="/icons/settings.svg" label="Settings" asideOpen={asideOpen} />
+                    <AsideButton
+                        src="/icons/report-history.svg"
+                        label="Report history"
+                        asideOpen={asideOpen}
+                    />
+                    <AsideButton src="/icons/help.svg" label="Help" asideOpen={asideOpen} />
+                    <AsideButton
+                        src="/icons/feedback.svg"
+                        label="Send Feedback"
+                        asideOpen={asideOpen}
+                    />
                     <hr className="border-neutral-700 my-3" />
                     <div className="px-5 text-neutral-400 text-xs font-semibold ml-1">
                         <div className="flex flex-wrap justify-left gap-x-3 py-2 mr-5">
@@ -209,7 +162,22 @@ const Aside = () => {
             </Scrollbars>
         </aside>
     ) : (
-        <div></div>
+        <aside>
+            <div className="bg-menu h-screen flex flex-col py-2">
+                <Logo asideOpen={asideOpen} setAsideOpen={setAsideOpen} />
+                <div className="my-1">
+                    <AsideButton label="Home" src="/icons/home.svg" asideOpen={asideOpen} />
+                    <AsideButton label="Explore" src="/icons/compass.svg" asideOpen={asideOpen} />
+                    <AsideButton label="Shorts" src="/icons/shorts.svg" asideOpen={asideOpen} />
+                    <AsideButton
+                        label="Subscriptions"
+                        src="/icons/subscriptions.svg"
+                        asideOpen={asideOpen}
+                    />
+                    <AsideButton label="Library" src="/icons/library.svg" asideOpen={asideOpen} />
+                </div>
+            </div>
+        </aside>
     );
 };
 

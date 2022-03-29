@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-const AsideButton = ({ src, label, avatar, onClick }) => {
+const AsideButton = ({ src, label, avatar, onClick, asideOpen }) => {
     const [animate, setAnimate] = useState(false);
-    return (
+    return asideOpen ? (
         <button
             className={
                 animate
@@ -21,6 +21,26 @@ const AsideButton = ({ src, label, avatar, onClick }) => {
                 className={avatar ? "mx-2 h-6 w-6 rounded-full" : "mx-2 h-6 w-6"}
             />
             <p className="mx-3 text-white font-normal text-sm">{label}</p>
+        </button>
+    ) : (
+        <button
+            className={
+                animate
+                    ? "flex flex-col items-center animate-button-click w-full py-3 mb-1 hover:bg-menu-active"
+                    : "flex flex-col items-center w-full py-3 my-1 hover:bg-menu-active"
+            }
+            onClick={() => {
+                setAnimate(true);
+                onClick && onClick();
+            }}
+            onAnimationEnd={() => setAnimate(false)}
+        >
+            <img
+                src={src}
+                alt=""
+                className={avatar ? "mx-2 h-6 w-6 rounded-full" : "mx-2 h-6 w-6"}
+            />
+            <p className="text-white font-extralight text-2xs m-1">{label}</p>
         </button>
     );
 };

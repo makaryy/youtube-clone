@@ -14,7 +14,7 @@ const CategoryBar = () => {
 
     const arr = Array(30).fill("haha");
     return (
-        <div className="p-2 max-w-full bg-menu flex flex-row h-fit items-center border-b border-neutral-700 max-h-min text-white">
+        <div className="p-2 max-w-full bg-menu flex flex-row h-fit items-center border-b border-neutral-700 max-h-min text-white opacity-[.98]">
             {showLeftArrow && (
                 <button
                     className="xl:w-28 lg:w-28 md:w-32 sm:w-64 py-3 h-full bg-menu shadow-right relative xl:left-5 xl:-mx-5 lg:left-4 lg:-mx-4 md:left-3 md:-mx-3 flex justify-center items-center"

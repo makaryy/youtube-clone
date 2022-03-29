@@ -1,14 +1,22 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import Scrollbars from "react-custom-scrollbars-2";
 import Aside from "./components/Aside";
 import CategoryBar from "./components/CategoryBar";
-import Main from "./components/Main";
+import Home from "./components/Home";
 import Toolbar from "./components/Toolbar";
 
 const App = () => {
+    const [asideOpen, setAsideOpen] = useState(window.matchMedia("(min-width: 1328px)").matches);
+
+    useEffect(() => {
+        window
+            .matchMedia("(min-width: 1328px)")
+            .addEventListener("change", (e) => setAsideOpen(e.matches));
+    }, []);
+
     return (
         <div className="font-yt min-h-screen w-screen m-0 p-0 pr-1 flex-row flex bg-bg">
-            <Aside />
+            <Aside asideOpen={asideOpen} setAsideOpen={setAsideOpen} />
             <Scrollbars
                 autoHeight
                 autoHeightMin={"100vh"}
@@ -17,10 +25,10 @@ const App = () => {
             >
                 <div className="flex flex-col grow-0 mr-3">
                     <div className="sticky top-0 flex flex-col">
-                        <Toolbar />
+                        <Toolbar asideOpen={asideOpen} />
                         <CategoryBar />
                     </div>
-                    <Main />
+                    <Home />
                 </div>
             </Scrollbars>
         </div>
