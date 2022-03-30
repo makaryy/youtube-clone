@@ -89,9 +89,13 @@ const Main = () => {
                     thumbnailUrl={`https://picsum.photos/300/200?random=${Math.floor(
                         Math.random() * 1000
                     )}`}
-                    title={`${
-                        names[Math.floor(Math.random() * names.length)]
-                    }'s SECRET! MUST WATCH!!`}
+                    title={`${names[Math.floor(Math.random() * names.length)]}${
+                        Math.floor(Math.random() * 10) % 3 === 0
+                            ? " IN DANGER! YOU WON'T BELIEVE IT! SHOCKING NEWS! CAN'T MISS IT!!"
+                            : Math.floor(Math.random() * 10) % 3 === 1
+                            ? "'s SECRET! MUST WATCH!!"
+                            : "'s newest"
+                    }`}
                     creator={{
                         name: names[Math.floor(Math.random() * names.length)],
                         verified: Math.floor(Math.random() * 10) % 2,

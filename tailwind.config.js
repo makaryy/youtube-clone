@@ -39,6 +39,9 @@ module.exports = {
             fontSize: {
                 "2xs": "0.625rem",
             },
+            flexGrow: {
+                4: 4,
+            },
         },
     },
     plugins: [
