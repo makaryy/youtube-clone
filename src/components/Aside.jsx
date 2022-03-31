@@ -34,7 +34,7 @@ const Aside = ({ asideOpen, setAsideOpen }) => {
         "Joseph Griffin",
     ];
     return asideOpen ? (
-        <aside className=" bg-menu w-60 h-screen flex flex-col py-2">
+        <aside className="bg-menu w-60 h-screen flex flex-col py-2">
             <Logo asideOpen={asideOpen} setAsideOpen={setAsideOpen} />
             <Scrollbars
                 className="group"
@@ -51,7 +51,7 @@ const Aside = ({ asideOpen, setAsideOpen }) => {
                         label="Subscriptions"
                         asideOpen={asideOpen}
                     />
-                    <hr className="border-neutral-700 my-3" asideOpen={asideOpen} />
+                    <hr className="border-neutral-700 my-3" />
                     <AsideButton src="/icons/library.svg" label="Library" asideOpen={asideOpen} />
                     <AsideButton src="/icons/history.svg" label="History" asideOpen={asideOpen} />
                     <AsideButton
@@ -123,7 +123,7 @@ const Aside = ({ asideOpen, setAsideOpen }) => {
                     <AsideButton src="/icons/gaming.svg" label="Gaming" asideOpen={asideOpen} />
                     <AsideButton src="/icons/live.svg" label="Live" asideOpen={asideOpen} />
                     <AsideButton src="/icons/sports.svg" label="Sports" asideOpen={asideOpen} />
-                    <hr className="border-neutral-700 my-3" asideOpen={asideOpen} />
+                    <hr className="border-neutral-700 my-3" />
                     <AsideButton src="/icons/settings.svg" label="Settings" asideOpen={asideOpen} />
                     <AsideButton
                         src="/icons/report-history.svg"

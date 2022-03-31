@@ -2,7 +2,7 @@ import React from "react";
 import Card from "./Card";
 import { formatDistanceToNowStrict } from "date-fns";
 
-const Main = () => {
+const Home = () => {
     const names = [
         "Audrey Blair",
         "Alisha Blackburn",
@@ -84,8 +84,9 @@ const Main = () => {
     const arr = Array(60).fill("hehe");
     return (
         <main className="min-h-screen bg-bg grid gap-4 2xl:grid-cols-6 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 p-5">
-            {arr.map(() => (
+            {arr.map((a, i) => (
                 <Card
+                    key={i}
                     thumbnailUrl={`https://picsum.photos/300/200?random=${Math.floor(
                         Math.random() * 1000
                     )}`}
@@ -110,4 +111,4 @@ const Main = () => {
     );
 };
 
-export default Main;
+export default Home;

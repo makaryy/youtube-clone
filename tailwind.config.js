@@ -16,12 +16,22 @@ module.exports = {
         extend: {
             animation: {
                 "button-click": "button-click ease-in-out 300ms",
+                "aside-slide-in": "aside-slide-in 175ms",
+                "aside-slide-out": "aside-slide-out 175ms",
             },
             keyframes: {
                 "button-click": {
                     "0%": { backgroundColor: "#383838" },
                     "50%": { backgroundColor: "#565656" },
                     "100%": { backgroundColor: "#383838" },
+                },
+                "aside-slide-in": {
+                    "0%": { transform: "translateX(-100%)" },
+                    "100%": { transform: "translateX(0)" },
+                },
+                "aside-slide-out": {
+                    "0%": { transform: "translateX(0)" },
+                    "100%": { transform: "translateX(-100%)" },
                 },
             },
             colors: {
