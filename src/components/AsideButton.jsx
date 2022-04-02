@@ -26,7 +26,7 @@ const AsideButton = ({ src, label, avatar, onClick, asideOpen }) => {
         <button
             className={
                 animate
-                    ? "flex flex-col items-center animate-button-click w-full py-3 mb-1 hover:bg-menu-active"
+                    ? "flex flex-col items-center animate-button-click w-full py-3 my-1 hover:bg-menu-active"
                     : "flex flex-col items-center w-full py-3 my-1 hover:bg-menu-active"
             }
             onClick={() => {

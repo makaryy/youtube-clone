@@ -79,7 +79,7 @@ const Aside = ({ asideOpen, setAsideOpen }) => {
                                 src={`https://picsum.photos/48?random=${Math.floor(
                                     Math.random() * 1000
                                 )}`}
-                                label={sub.name}
+                                label={sub}
                                 avatar={true}
                                 asideOpen={asideOpen}
                             />
